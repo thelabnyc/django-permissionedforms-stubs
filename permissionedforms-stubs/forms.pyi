@@ -27,6 +27,6 @@ class PermissionedForm(forms.Form, metaclass=PermissionedFormMetaclass):
 class PermissionedModelFormOptions(PermissionedFormOptionsMixin, forms.models.ModelFormOptions): ...
 
 class PermissionedModelFormMetaclass(PermissionedFormMetaclass, forms.models.ModelFormMetaclass):  # type: ignore[misc]
-    options_class: type[PermissionedModelFormOptions]
+    options_class: type[PermissionedModelFormOptions]  # type: ignore[assignment]
 
 class PermissionedModelForm(PermissionedForm, forms.ModelForm, metaclass=PermissionedModelFormMetaclass): ...  # type: ignore[misc]
