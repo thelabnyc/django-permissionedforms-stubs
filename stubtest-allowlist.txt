@@ -1,0 +1,1 @@
+# Stubtest allowlist for django-permissionedforms-stubs

@@ -1,0 +1,33 @@
+- case: permissioned_form_basic
+  mypy_config: |
+    [mypy]
+    plugins = mypy_django_plugin.main
+
+    [mypy.plugins.django-stubs]
+    django_settings_module = tests.mypy_test_settings
+  main: |
+    from permissionedforms import PermissionedForm
+    reveal_type(PermissionedForm)  # N: Revealed type is "def (*args: Any, for_user: django.contrib.auth.base_user.AbstractBaseUser | None =, **kwargs: Any) -> permissionedforms.forms.PermissionedForm"
+
+- case: permissioned_model_form_basic
+  mypy_config: |
+    [mypy]
+    plugins = mypy_django_plugin.main
+
+    [mypy.plugins.django-stubs]
+    django_settings_module = tests.mypy_test_settings
+  main: |
+    from permissionedforms import PermissionedModelForm
+    reveal_type(PermissionedModelForm)  # N: Revealed type is "def (*args: Any, for_user: django.contrib.auth.base_user.AbstractBaseUser | None =, **kwargs: Any) -> permissionedforms.forms.PermissionedModelForm"
+
+- case: permissioned_form_instantiate
+  mypy_config: |
+    [mypy]
+    plugins = mypy_django_plugin.main
+
+    [mypy.plugins.django-stubs]
+    django_settings_module = tests.mypy_test_settings
+  main: |
+    from permissionedforms import PermissionedForm
+    form = PermissionedForm()
+    reveal_type(form)  # N: Revealed type is "permissionedforms.forms.PermissionedForm"
