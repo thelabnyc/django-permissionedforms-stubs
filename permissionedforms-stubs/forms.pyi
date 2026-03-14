@@ -16,7 +16,7 @@ class PermissionedFormOptionsMixin:
 
 class PermissionedFormOptions(PermissionedFormOptionsMixin, Options): ...
 
-FormMetaclass: type[forms.forms.DeclarativeFieldsMetaclass]
+FormMetaclass = forms.forms.DeclarativeFieldsMetaclass
 
 class PermissionedFormMetaclass(OptionCollectingMetaclass, forms.forms.DeclarativeFieldsMetaclass):  # type: ignore[misc]
     options_class: type[PermissionedFormOptions]
