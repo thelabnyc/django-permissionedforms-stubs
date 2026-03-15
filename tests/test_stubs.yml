@@ -7,7 +7,7 @@
     django_settings_module = tests.mypy_test_settings
   main: |
     from permissionedforms import PermissionedForm
-    reveal_type(PermissionedForm)  # N: Revealed type is "def (*args: Any, for_user: django.contrib.auth.base_user.AbstractBaseUser | None =, **kwargs: Any) -> permissionedforms.forms.PermissionedForm"
+    reveal_type(PermissionedForm)  # N: Revealed type is "def (data: typing.Mapping[builtins.str, Any] | None =, files: django.utils.datastructures.MultiValueDict[builtins.str, django.core.files.uploadedfile.UploadedFile] | None =, auto_id: builtins.bool | builtins.str =, prefix: builtins.str | None =, initial: typing.MutableMapping[builtins.str, Any] | None =, error_class: type[django.forms.utils.ErrorList] =, label_suffix: builtins.str | None =, empty_permitted: builtins.bool =, field_order: typing.Iterable[builtins.str] | None =, use_required_attribute: builtins.bool | None =, renderer: django.forms.renderers.BaseRenderer | None =, for_user: django.contrib.auth.base_user.AbstractBaseUser | None =) -> permissionedforms.forms.PermissionedForm"
 
 - case: permissioned_model_form_basic
   mypy_config: |
@@ -18,7 +18,7 @@
     django_settings_module = tests.mypy_test_settings
   main: |
     from permissionedforms import PermissionedModelForm
-    reveal_type(PermissionedModelForm)  # N: Revealed type is "def (*args: Any, for_user: django.contrib.auth.base_user.AbstractBaseUser | None =, **kwargs: Any) -> permissionedforms.forms.PermissionedModelForm"
+    reveal_type(PermissionedModelForm)  # N: Revealed type is "def (data: typing.Mapping[builtins.str, Any] | None =, files: django.utils.datastructures.MultiValueDict[builtins.str, django.core.files.uploadedfile.UploadedFile] | None =, auto_id: builtins.bool | builtins.str =, prefix: builtins.str | None =, initial: typing.MutableMapping[builtins.str, Any] | None =, error_class: type[django.forms.utils.ErrorList] =, label_suffix: builtins.str | None =, empty_permitted: builtins.bool =, field_order: typing.Iterable[builtins.str] | None =, use_required_attribute: builtins.bool | None =, renderer: django.forms.renderers.BaseRenderer | None =, for_user: django.contrib.auth.base_user.AbstractBaseUser | None =) -> permissionedforms.forms.PermissionedModelForm"
 
 - case: permissioned_form_instantiate
   mypy_config: |

@@ -1,1 +1,5 @@
 # Stubtest allowlist for django-permissionedforms-stubs
+
+# Runtime uses *args/**kwargs pass-through to Form.__init__; stub expands to concrete parameters for type safety
+permissionedforms.PermissionedForm.__init__
+permissionedforms.forms.PermissionedForm.__init__
